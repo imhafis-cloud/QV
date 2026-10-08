@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<title>Request a call back | Qintar Ventures</title><meta name=description content="Leave your details and Qintar Ventures will call you back.">
+<link rel=icon href=assets/favicon.png>
+<link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel=stylesheet>
+<script>document.documentElement.classList.add('js')</script>
+<link rel=stylesheet href=style.css></head><body>
+<div class=top><div class=w><a href=index.html><img src=assets/logo-white.png alt="Qintar Ventures"></a>
+<nav><a href=index.html#departments>Departments</a><a href=index.html#engagement>Engagement</a><a href=index.html#einvoicing>E-invoicing</a><a class=nb href=contact.html>Contact</a></nav></div></div>
+
+<section class="hero sm"><div class="orb o1"></div><div class=w><div class="l rv">Contact</div><h1 class=rv style="--d:80ms">Request a <em>call back</em></h1>
+<p class="lead rv" style="--d:160ms">Leave your details and we will call you to scope what you need.</p></div></section>
+<section class=s><div class="w cg">
+<div class="card rv"><form id=cf novalidate>
+<label>Name<input name=name type=text maxlength=120 required autocomplete=name></label>
+<label>Phone<input name=phone type=tel maxlength=25 required autocomplete=tel inputmode=tel pattern="[0-9+\(\)\-. ]{7,25}" placeholder="+971 50 000 0000"></label>
+<label>Email<input name=email type=email maxlength=200 required autocomplete=email></label>
+<label>Message<textarea name=message rows=5 maxlength=2000 required></textarea></label>
+<div class=hp aria-hidden=true><label>Website<input name=website type=text tabindex=-1 autocomplete=off></label></div>
+<p class="mu small" style="margin:0 0 1rem">We use these details only to respond to your request.</p>
+<button class=b type=submit>Request a call back</button>
+<p id=cm class=cm role=status aria-live=polite></p></form></div>
+<aside class="card dk2 rv" style="--d:100ms"><div class=l>Prefer to reach us directly</div>
+<p class=ln><svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg><a href=mailto:info@qintarventures.com>info@qintarventures.com</a></p>
+<p class=ln><svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><a href=tel:+971585846830>+971 58 584 6830</a></p>
+<p class=ln><svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Ras Al Khaimah, UAE</p>
+<p class=sm2>Qintar Ventures FZ LLC, RAKEZ registered.</p></aside></div></section>
+<script src=config.js></script>
+<script>
+(function(){var f=document.getElementById('cf'),m=document.getElementById('cm'),b=f.querySelector('button'),T=b.textContent;
+function say(c,t){m.className='cm '+c;m.textContent=t}
+function done(){f.innerHTML='<h2 style="margin:0 0 .6rem">Thank you.</h2><p>We have your details and will call you back.</p>'}
+var q=new URLSearchParams(location.search).get('dept');if(q)f.message.value='I would like a call back about '+q+'.';
+f.addEventListener('submit',function(e){e.preventDefault();
+if(f.website.value){done();return}
+if(!f.checkValidity()){f.reportValidity();return}
+var c=window.QV_CONFIG||{};
+if(!c.supabaseUrl||!c.supabaseAnonKey){say('err','Our form is not connected yet. Please email info@qintarventures.com or call +971 58 584 6830.');return}
+try{var t=+localStorage.getItem('qv_last');if(Date.now()-t<60000){say('err','Please wait a minute before sending another request.');return}}catch(x){}
+b.disabled=true;b.textContent='Sending';
+fetch(c.supabaseUrl+'/rest/v1/callback_requests',{method:'POST',headers:{'Content-Type':'application/json',apikey:c.supabaseAnonKey,Authorization:'Bearer '+c.supabaseAnonKey,Prefer:'return=minimal'},
+body:JSON.stringify({name:f.name.value.trim(),phone:f.phone.value.trim(),email:f.email.value.trim(),message:f.message.value.trim(),source:(location.pathname+location.search).slice(0,300)})})
+.then(function(r){if(!r.ok)throw 0;try{localStorage.setItem('qv_last',Date.now())}catch(x){}done()})
+.catch(function(){b.disabled=false;b.textContent=T;say('err','Something went wrong. Please email info@qintarventures.com or call +971 58 584 6830.')})})})();
+</script>
+<footer><div class=w><img src=assets/logo-white.png alt="Qintar Ventures" style="height:30px"><div>Qintar Ventures FZ LLC | Business Transformation Advisory<br>RAKEZ registered, Ras Al Khaimah, UAE</div>
+<div><a href=mailto:info@qintarventures.com>info@qintarventures.com</a><br>+971 58 584 6830</div></div></footer>
+<script>
+var rv=document.querySelectorAll('.rv'),R=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(R||!('IntersectionObserver' in window)){rv.forEach(function(e){e.classList.add('in')})}else{var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}})},{threshold:.15});rv.forEach(function(e){o.observe(e)})}
+document.querySelectorAll('[data-n]').forEach(function(e){var n=+e.dataset.n;if(R){e.textContent=n;return}var s=null;new IntersectionObserver(function(es,ob){if(es[0].isIntersecting){ob.disconnect();(function f(t){s=s||t;var p=Math.min((t-s)/1200,1);e.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(performance.now())}}).observe(e)});
+var cd=document.getElementById('cd');if(cd){var d=Math.ceil((new Date('2026-10-30T00:00:00+04:00')-new Date())/864e5);cd.textContent=d>0?d+' days left':(d===0?'Due today':'Deadline passed')}
+</script></body></html>
