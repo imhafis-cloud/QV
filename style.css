@@ -61,3 +61,5 @@ button.b{border:0;cursor:pointer;font-family:inherit}button.b:disabled{opacity:.
 .cm{margin:1rem 0 0;font-weight:600}.cm.err{color:#9A3B3B}
 .ln{display:flex;align-items:center;gap:.2rem;margin:1.1rem 0 0;font-size:1.05rem}.ln a{color:#fff}.sm2{margin:1.6rem 0 0;font-size:.85rem}
 @media(max-width:800px){.cg{grid-template-columns:1fr}}
+.prose{max-width:46rem}.prose h2{font-size:1.35rem;margin:2.2rem 0 .6rem}.prose h2:first-child{margin-top:0}.prose p,.prose li{margin:.5rem 0}.prose ul{padding-left:1.2rem}
+.prose a,.small a{color:var(--db)}
