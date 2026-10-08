@@ -7,7 +7,7 @@
 <script>document.documentElement.classList.add('js')</script>
 <link rel=stylesheet href=style.css></head><body>
 <div class=top><div class=w><a href=index.html><img src=assets/logo-white.png alt="Qintar Ventures"></a>
-<nav><a href=index.html#departments>Departments</a><a href=index.html#engagement>Engagement</a><a href=index.html#einvoicing>E-invoicing</a><a class=nb href=contact.html>Contact</a></nav></div></div>
+<nav><a href=index.html#departments>Departments</a><a href=index.html#engagement>Engagement</a><a class=nb href=contact.html>Contact</a></nav></div></div>
 
 <section class="hero sm"><div class="orb o1"></div><div class=w><div class="l rv">Contact</div><h1 class=rv style="--d:80ms">Request a <em>call back</em></h1>
 <p class="lead rv" style="--d:160ms">Leave your details and we will call you to scope what you need.</p></div></section>
@@ -18,7 +18,7 @@
 <label>Email<input name=email type=email maxlength=200 required autocomplete=email></label>
 <label>Message<textarea name=message rows=5 maxlength=2000 required></textarea></label>
 <div class=hp aria-hidden=true><label>Website<input name=website type=text tabindex=-1 autocomplete=off></label></div>
-<p class="mu small" style="margin:0 0 1rem">We use these details only to respond to your request.</p>
+<p class="mu small" style="margin:0 0 1rem">We use these details only to respond to your request. See our <a href=privacy.html>privacy policy</a>.</p>
 <button class=b type=submit>Request a call back</button>
 <p id=cm class=cm role=status aria-live=polite></p></form></div>
 <aside class="card dk2 rv" style="--d:100ms"><div class=l>Prefer to reach us directly</div>
@@ -45,7 +45,7 @@ body:JSON.stringify({name:f.name.value.trim(),phone:f.phone.value.trim(),email:f
 .catch(function(){b.disabled=false;b.textContent=T;say('err','Something went wrong. Please email info@qintarventures.com or call +971 58 584 6830.')})})})();
 </script>
 <footer><div class=w><img src=assets/logo-white.png alt="Qintar Ventures" style="height:30px"><div>Qintar Ventures FZ LLC | Business Transformation Advisory<br>RAKEZ registered, Ras Al Khaimah, UAE</div>
-<div><a href=mailto:info@qintarventures.com>info@qintarventures.com</a><br>+971 58 584 6830</div></div></footer>
+<div><a href=mailto:info@qintarventures.com>info@qintarventures.com</a><br>+971 58 584 6830<br><a href=privacy.html>Privacy policy</a></div></div></footer>
 <script>
 var rv=document.querySelectorAll('.rv'),R=matchMedia('(prefers-reduced-motion:reduce)').matches;
 if(R||!('IntersectionObserver' in window)){rv.forEach(function(e){e.classList.add('in')})}else{var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}})},{threshold:.15});rv.forEach(function(e){o.observe(e)})}
