@@ -91,3 +91,10 @@ form label{transition:color .2s}form label:focus-within{color:var(--db)}
 .ok{width:4.5rem;height:4.5rem;display:block;margin-bottom:1rem;fill:none;stroke:var(--db);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .ok *{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .9s ease forwards}.ok path{animation-delay:.5s}@keyframes draw{to{stroke-dashoffset:0}}
 @media(prefers-reduced-motion:reduce){.mqt,.hero h1 em,.hero .b,.cta .b{animation:none!important}.ok *{animation:none!important;stroke-dashoffset:0}}
+
+.stats{grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.6rem 2rem;padding-block:2.2rem}
+.st{display:flex;gap:1.1rem;align-items:flex-start}
+.st h3{font:500 1.2rem/1.25 'Source Serif 4',Cambria,serif;color:#fff;margin:.15rem 0 .3rem}
+.st p{margin:0;font-size:.92rem;line-height:1.45;color:#bdbab5}
+.strip .ico{flex:none;width:2.6rem;height:2.6rem;margin:.2rem .3rem 0 .3rem;border-color:#55524c;color:var(--br)}.strip .ico .ic{width:1.3rem;height:1.3rem}
+.strip .st:hover .ico{background:var(--br);color:var(--ch);border-color:var(--br)}
