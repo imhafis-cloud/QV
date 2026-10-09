@@ -98,3 +98,10 @@ form label{transition:color .2s}form label:focus-within{color:var(--db)}
 .st p{margin:0;font-size:.92rem;line-height:1.45;color:#bdbab5}
 .strip .ico{flex:none;width:2.6rem;height:2.6rem;margin:.2rem .3rem 0 .3rem;border-color:#55524c;color:var(--br)}.strip .ico .ic{width:1.3rem;height:1.3rem}
 .strip .st:hover .ico{background:var(--br);color:var(--ch);border-color:var(--br)}
+
+.stats{grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.2rem 2rem;padding-block:1.7rem}
+.st{align-items:center;gap:.9rem}.st h3{margin:0;font-size:1.15rem}
+.strip .ico{margin:0 .3rem 0 .3rem}
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr;gap:1.2rem 1rem}.st h3{font-size:1rem}.st{gap:.6rem}.strip .ico{width:2.3rem;height:2.3rem;margin:0 .2rem}}
+.stats{display:flex;flex-wrap:wrap;justify-content:space-between}
+@media(max-width:700px){.stats{display:grid}}
