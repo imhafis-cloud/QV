@@ -91,3 +91,5 @@ form label{transition:color .2s}form label:focus-within{color:var(--db)}
 .ok{width:4.5rem;height:4.5rem;display:block;margin-bottom:1rem;fill:none;stroke:var(--db);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .ok *{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .9s ease forwards}.ok path{animation-delay:.5s}@keyframes draw{to{stroke-dashoffset:0}}
 @media(prefers-reduced-motion:reduce){.mqt,.hero h1 em,.hero .b,.cta .b{animation:none!important}.ok *{animation:none!important;stroke-dashoffset:0}}
+.so{display:inline-flex;align-items:center;gap:.45rem}.so svg{width:1rem;height:1rem;flex:none}
+.lis{display:inline-flex;margin-right:.5rem;color:var(--br)}.lis svg{width:1.1rem;height:1.1rem}
