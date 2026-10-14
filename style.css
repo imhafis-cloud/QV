@@ -95,3 +95,4 @@ form label{transition:color .2s}form label:focus-within{color:var(--db)}
 .lis{display:inline-flex;margin-right:.5rem;color:var(--br)}.lis svg{width:1.1rem;height:1.1rem}
 form select{display:block;width:100%;margin-top:.45rem;padding:.8rem .9rem;font:400 1rem 'Source Sans 3',sans-serif;letter-spacing:0;text-transform:none;color:var(--ch);background:var(--pa);border:1px solid var(--st);border-radius:0;transition:border-color .2s,box-shadow .2s}
 form select:focus{outline:0;border-color:var(--br);box-shadow:0 0 0 3px rgba(201,160,90,.25)}
+.bk{margin:.8rem 0 1rem}.bk2{margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--gr)}
